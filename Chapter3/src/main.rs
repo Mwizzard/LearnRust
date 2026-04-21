@@ -2,6 +2,13 @@ fn main() {
     variables_and_mutability();
     
     data_types();
+   
+    let index : i32 = 21;
+
+    let value : i32 = fibonacci(index);
+
+    println!("the value at the position {index} in the fibonacci sequence is : {value}");
+
 }
 
 fn variables_and_mutability(){
@@ -19,7 +26,6 @@ fn variables_and_mutability(){
     }
     
     println!("The value of x in the outer scope is: {x}");
-    
 
 }
 
@@ -63,4 +69,15 @@ fn data_types(){
 
     let first = a[0];
     let second = a[1];
+}
+
+//defined as (0, 1, 1, 2, 3, 5, etc) where 0 is at the index 1.
+fn fibonacci(mut n : i32) -> i32{
+    if n == 0 {
+        return 0;
+    } else if n <= 2 {
+        return 1;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n -2);
+    }
 }
